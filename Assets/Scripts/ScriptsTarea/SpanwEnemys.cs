@@ -4,15 +4,42 @@ using UnityEngine;
 
 public class SpanwEnemys : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
+    [SerializeField] private SimpleObjectPooling myPooling;
+    [SerializeField] private float fireRate = 1f;
+    [SerializeField] private bool canShoot;
+
+    private float _count = 0f;
+    private int _countBullets = 0;
+
+    private void Awake()
     {
-        
+        myPooling.SetUp(this.transform);
+    }
+    void OnEnable()
+    {
+        myPooling.onEnableObject += PrintBulletCount;
     }
 
-    // Update is called once per frame
+    private void OnDisable()
+    {
+        myPooling.onEnableObject -= PrintBulletCount;
+    }
     void Update()
     {
-        
+        _count += Time.deltaTime;
+
+        if (_count > fireRate && canShoot)
+        {
+            myPooling.GetObject(this.transform);
+
+            _count = 0;
+        }
+    }
+
+
+    private void PrintBulletCount()
+    {
+        _countBullets++;
+        Debug.Log(gameObject.name + ": " + _countBullets);
     }
 }

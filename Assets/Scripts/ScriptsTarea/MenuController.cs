@@ -8,7 +8,7 @@ public class MenuController : MonoBehaviour
 
     public void PlayerSeleccionado(PlayerController playerController)
     {
-        playerSO.SavePlayer(playerController.speedX, playerController.speedY, playerController.spriteJugador);
+        playerSO.SavePlayer(playerController.speedX, playerController.speedY, playerController.vida, playerController.spriteJugador);
     }
 
 }

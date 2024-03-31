@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2f32e7f334f3045b7746c5387891cd, type: 3}
   m_Name: SavePlayer
   m_EditorClassIdentifier: 
-  speedY: 0
-  speedX: 0
+  speedY: 5
+  speedX: 5
+  live: 5
   spriteJugador: {fileID: 0}

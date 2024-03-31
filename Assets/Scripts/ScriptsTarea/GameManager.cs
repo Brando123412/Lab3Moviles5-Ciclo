@@ -14,6 +14,7 @@ public class GameManager : MonoBehaviour
     {
         playerController.speedX = playerSO.speedX;
         playerController.speedY = playerSO.speedY;
+        playerController.vida = playerSO.live;
         playerController.spriteJugador = playerSO.spriteJugador;
     }
 }

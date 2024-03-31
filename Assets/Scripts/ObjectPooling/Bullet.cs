@@ -8,7 +8,10 @@ public class Bullet : MonoBehaviour
     [SerializeField] private Rigidbody2D myRigidbody;
     [SerializeField] private float speed;
     private bool isSetUp;
-
+    private void Awake()
+    {
+        myRigidbody = GetComponent<Rigidbody2D>();
+    }
     private void OnEnable()
     {
         myPooling.onEnableObject += SetUp;
@@ -23,13 +26,12 @@ public class Bullet : MonoBehaviour
     {
         if (!isSetUp)
         {
-            //TO DO SET UP
             if(myRigidbody == null)
             {
                 myRigidbody = GetComponent<Rigidbody2D>();
             }
 
-            myRigidbody.velocity = Vector3.down * speed;
+            myRigidbody.velocity = Vector3.left * speed;
 
             isSetUp = true;
         }
@@ -40,7 +42,6 @@ public class Bullet : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if(collision.tag == "Player")
         {
-            //TO DO DAMAGE
             isSetUp = false;
             myPooling.ObjectReturn(this.gameObject);
         }

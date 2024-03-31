@@ -4,10 +4,9 @@ using UnityEngine;
 
 public class PoolingController : MonoBehaviour
 {
-    [SerializeField] private SimpleObjectPooling myPooling;
+    /*[SerializeField] private SimpleObjectPooling myPooling;
     [SerializeField] private float fireRate = 1f;
     [SerializeField] private bool canShoot;
-    public NohacerEnCasa eliminar;
 
     private float _count = 0f;
     private int _countBullets = 0;
@@ -39,5 +38,5 @@ public class PoolingController : MonoBehaviour
     {
         _countBullets++;
         Debug.Log(gameObject.name + ": " + _countBullets);
-    }
+    }          */
 }
