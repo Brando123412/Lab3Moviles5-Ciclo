@@ -12,7 +12,7 @@ public class SimpleObjectPooling : ScriptableObject
     private Transform parentTransform;
 
     public event Action onEnableObject;
-
+    public PlayerSO soPlayer;
     public void SetUp(Transform parent)
     {
         if(objectPool == null)
@@ -27,7 +27,7 @@ public class SimpleObjectPooling : ScriptableObject
     public GameObject GetObject(Transform objetcSave)
     {
         GameObject objectInstance = null;
-        int randomPosition = UnityEngine.Random.Range(-4, 4);
+        float randomPosition = UnityEngine.Random.Range(-4.2f, 4.2f);
         Vector3 positionSpanw = new Vector3(12, randomPosition, 0);
 
         if (objectPool.Count > 0)
@@ -35,6 +35,7 @@ public class SimpleObjectPooling : ScriptableObject
 
             objectInstance = objectPool.Dequeue();
             objectInstance.transform.position = positionSpanw;
+            objectInstance.GetComponent<Bullet>().speed = (soPlayer.speedX + 1) * 5;
             objectInstance.SetActive(true);
             onEnableObject?.Invoke();
         }

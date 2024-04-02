@@ -6,7 +6,8 @@ public class Bullet : MonoBehaviour
 {
     [SerializeField] private SimpleObjectPooling myPooling;
     [SerializeField] private Rigidbody2D myRigidbody;
-    [SerializeField] private float speed;
+    [SerializeField] public float speed;
+    [SerializeField] private int hit;
     private bool isSetUp;
     private void Awake()
     {
@@ -42,6 +43,7 @@ public class Bullet : MonoBehaviour
         Debug.Log(collision.gameObject.name);
         if(collision.tag == "Player")
         {
+            collision.GetComponent<PlayerController>().vida -= hit;   
             isSetUp = false;
             myPooling.ObjectReturn(this.gameObject);
         }

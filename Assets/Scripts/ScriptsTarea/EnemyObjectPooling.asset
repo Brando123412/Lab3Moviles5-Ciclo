@@ -17,3 +17,4 @@ MonoBehaviour:
   - {fileID: 6509918829758004950, guid: b8caa7d104dc2a84c969b37a6fa8d830, type: 3}
   - {fileID: 2530841296317368529, guid: f346e9eb0659a07459065f8396b08677, type: 3}
   - {fileID: 5572069432072907459, guid: e3d2191e2e65edd46af983490be522e8, type: 3}
+  soPlayer: {fileID: 11400000, guid: 5a4d5977ffd8b1d4898117125c1e63ed, type: 2}
