@@ -231,6 +231,52 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &653248885
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 653248887}
+  - component: {fileID: 653248886}
+  m_Layer: 0
+  m_Name: PollingPlayer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &653248886
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653248885}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 430230189fb207b4d8239239d27de44b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectPool: []
+  objecPrefab: {fileID: 224312065211310670, guid: 77ede28d60bbdfa4c86b414e19a0e171, type: 3}
+--- !u!4 &653248887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 653248885}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &897669135
 GameObject:
   m_ObjectHideFlags: 0
@@ -242,7 +288,7 @@ GameObject:
   - component: {fileID: 897669136}
   - component: {fileID: 897669137}
   m_Layer: 0
-  m_Name: Final
+  m_Name: Colector
   m_TagString: Collector
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -257,7 +303,7 @@ Transform:
   m_GameObject: {fileID: 897669135}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.25, y: 0.19940591, z: 0.047513526}
+  m_LocalPosition: {x: 11.27, y: 0.19940591, z: 0.047513526}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -459,6 +505,7 @@ GameObject:
   - component: {fileID: 2034810870}
   - component: {fileID: 2034810869}
   - component: {fileID: 2034810872}
+  - component: {fileID: 2034810873}
   m_Layer: 0
   m_Name: PlayerController
   m_TagString: Player
@@ -595,6 +642,19 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1, y: 1}
   m_EdgeRadius: 0
+--- !u!114 &2034810873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2034810868}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2f9f51741ae1f3740b237d488dd2a937, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  pollingReferences: {fileID: 653248886}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -605,3 +665,4 @@ SceneRoots:
   - {fileID: 1788383805}
   - {fileID: 897669136}
   - {fileID: 28597639}
+  - {fileID: 653248887}

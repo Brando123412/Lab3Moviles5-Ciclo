@@ -1,28 +1,28 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class CanShotPlayer : MonoBehaviour
 {
-    [SerializeField] private SimpleObjectPooling myPooling;
+   
+    [SerializeField] Touch touch;
+    [SerializeField] ObjectPolling pollingReferences;
+    private void Update()
+    {
+        if (Input.touchCount > 0)
+        {
 
-    private int _countBullets = 0;
-    private void Awake()
-    {
-        myPooling.SetUp(this.transform);
+            touch = Input.GetTouch(0);
+            if (touch.phase == TouchPhase.Began)
+            {
+                InvokeRepeating("Disparo", 0f, 0.5f);
+            }
+            if (touch.phase == TouchPhase.Ended)
+            {
+                CancelInvoke("Disparo");
+            }
+        }
     }
-    void OnEnable()
+    void Disparo()
     {
-        myPooling.onEnableObject += PrintBulletCount;
-    }
-
-    private void OnDisable()
-    {
-        myPooling.onEnableObject -= PrintBulletCount;
-    }
-    private void PrintBulletCount()
-    {
-        _countBullets++;
-        Debug.Log(gameObject.name + ": " + _countBullets);
+        pollingReferences.GetObject(this.transform.position);
     }
 }
