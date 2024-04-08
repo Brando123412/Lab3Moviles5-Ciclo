@@ -135,6 +135,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Cube
       objectReference: {fileID: 0}
+    - target: {fileID: 3077625776923641723, guid: e031f0972cc43294f8193a0284fa968b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7010643029999691981, guid: e031f0972cc43294f8193a0284fa968b, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.034295797

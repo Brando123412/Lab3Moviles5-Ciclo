@@ -9,6 +9,8 @@ public class PlayerController : MonoBehaviour
     public bool jugable = false;
     float velX;
     float velY;
+
+    bool canShot;
     private void Update()
     {
         if (jugable)
@@ -21,4 +23,5 @@ public class PlayerController : MonoBehaviour
         velY = Mathf.Clamp(velY += -Input.acceleration.y * speedX, -4.35f, 4.35f);
         transform.position = new Vector3(velX, velY, 0);
     }
+
 }
