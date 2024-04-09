@@ -4,42 +4,22 @@ using UnityEngine;
 
 public class SpanwEnemys : MonoBehaviour
 {
-    [SerializeField] private SimpleObjectPooling myPooling;
-    [SerializeField] private float fireRate = 1f;
-    [SerializeField] private bool canShoot;
+    private float fireRate = 1f;
 
-    private float _count = 0f;
-    private int _countBullets = 0;
-
-    private void Awake()
-    {
-        myPooling.SetUp(this.transform);
-    }
-    void OnEnable()
-    {
-        myPooling.onEnableObject += PrintBulletCount;
-    }
-
-    private void OnDisable()
-    {
-        myPooling.onEnableObject -= PrintBulletCount;
-    }
+    [SerializeField] ObjectPool poolReference;
+    [SerializeField]float _count;
+    Vector3 posReference;
+    float randomValue;
     void Update()
     {
         _count += Time.deltaTime;
 
-        if (_count > fireRate && canShoot)
+        if (_count > fireRate )
         {
-            myPooling.GetObject(this.transform);
-
-            _count = 0;
+            randomValue = Random.Range(-4.5f,4.5f);
+            posReference = new Vector3(11.5f,randomValue,0);
+            poolReference.GetObject(posReference);
+            _count = 0;   print("Hola");
         }
-    }
-
-
-    private void PrintBulletCount()
-    {
-        _countBullets++;
-        Debug.Log(gameObject.name + ": " + _countBullets);
     }
 }

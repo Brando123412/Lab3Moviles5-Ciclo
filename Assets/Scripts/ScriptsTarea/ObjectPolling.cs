@@ -14,12 +14,12 @@ public class ObjectPolling : MonoBehaviour
         {
             tmp = objectPool[0];
             objectPool.Remove(tmp);
-            tmp.transform.position = references; 
-            tmp.GetComponent<PoolObjectBullet>().SetRefencesPolling(this);    
+            tmp.transform.position = references;     
             tmp.SetActive(true);
         }
         else
         {
+
             tmp = Instantiate(objecPrefab.gameObject,references,Quaternion.identity,transform);
             tmp.GetComponent<PoolObjectBullet>().SetRefencesPolling(this);
             tmp.SetActive(true);

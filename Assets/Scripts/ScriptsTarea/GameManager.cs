@@ -1,12 +1,13 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
+using TMPro;
 public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayerSO playerSO;
     [SerializeField] PlayerController playerController;
     [SerializeField] InsertionSort puntaje;
-    float puntajeValue;
+    public static float puntajeValue;
+    [SerializeField] TMP_Text scoreActual;
     private void Awake()
     {
         SetPlayer();
@@ -19,6 +20,7 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(2);
             puntaje.SavePuntaje((int)puntajeValue);
         }
+        scoreActual.text = "Puntaje: "+Mathf.Round(puntajeValue).ToString();
     }
     void SetPlayer()
     {

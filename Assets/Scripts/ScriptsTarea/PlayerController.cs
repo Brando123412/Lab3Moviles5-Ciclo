@@ -9,9 +9,6 @@ public class PlayerController : MonoBehaviour
     public bool jugable = false;
     float velX;
     float velY;
-    
-
-    bool canShot;
     private void Update()
     {
         if (jugable)

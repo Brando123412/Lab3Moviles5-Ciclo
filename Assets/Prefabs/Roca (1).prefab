@@ -11,11 +11,11 @@ GameObject:
   - component: {fileID: 3853095792420133482}
   - component: {fileID: 5516189679467532603}
   - component: {fileID: 9078232609608002506}
-  - component: {fileID: -5927300290972150258}
   - component: {fileID: 3851238021912430089}
+  - component: {fileID: -7376546871690544190}
   m_Layer: 0
   m_Name: Roca (1)
-  m_TagString: Untagged
+  m_TagString: Basura
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -132,22 +132,6 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.8, y: 0.8}
   m_EdgeRadius: 0
---- !u!114 &-5927300290972150258
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7591281397088759819}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5d524d503fe562d48a02e3135cd74426, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  myPooling: {fileID: 11400000, guid: 456da9f5bd927c3428ac223a73292a1f, type: 2}
-  myRigidbody: {fileID: 0}
-  speed: 3
-  hit: 5
 --- !u!50 &3851238021912430089
 Rigidbody2D:
   serializedVersion: 4
@@ -175,3 +159,17 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!114 &-7376546871690544190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7591281397088759819}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94cf97b0af2b8734fab08400ff7c6679, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 5
+  hit: 7
