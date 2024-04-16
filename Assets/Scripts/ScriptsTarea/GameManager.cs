@@ -5,7 +5,7 @@ public class GameManager : MonoBehaviour
 {
     [SerializeField] PlayerSO playerSO;
     [SerializeField] PlayerController playerController;
-    [SerializeField] InsertionSort puntaje;
+    
     public static float puntajeValue;
     [SerializeField] TMP_Text scoreActual;
     private void Awake()
@@ -17,8 +17,9 @@ public class GameManager : MonoBehaviour
         puntajeValue = puntajeValue + Time.deltaTime;   
         if (playerController.vida < 0)
         {
-            SceneManager.LoadScene(2);
-            puntaje.SavePuntaje((int)puntajeValue);
+            SceneGlobalManager.Instance.resutlSceneGO.SetActive(true);
+            SceneGlobalManager.Instance.gameSceceGO.SetActive(false);
+            SceneGlobalManager.Instance.puntaje.SavePuntaje((int)puntajeValue);
         }
         scoreActual.text = "Puntaje: "+Mathf.Round(puntajeValue).ToString();
     }

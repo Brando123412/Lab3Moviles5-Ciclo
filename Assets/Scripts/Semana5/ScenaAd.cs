@@ -3,7 +3,7 @@ using UnityEngine.SceneManagement;
 
 public class ScenaAd : MonoBehaviour
 {
-    // Start is called before the first frame update
+   
     void Start()
     {
         SceneManager.LoadScene("Results",LoadSceneMode.Additive);
@@ -13,6 +13,6 @@ public class ScenaAd : MonoBehaviour
     public void UnloadScene()
     {
         // Descargar la escena
-        SceneManager.UnloadScene("AdditiveScene");
+        SceneManager.UnloadSceneAsync("AdditiveScene");
     }
 }

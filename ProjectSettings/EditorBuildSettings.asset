@@ -6,6 +6,9 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/Para Lab 5/AdditiveScene.unity
+    guid: 01ce964f66fa16f45a952d3284b0ed62
+  - enabled: 1
     path: Assets/Scenes/ScenasTarea1/CharacterSelection.unity
     guid: 9a4ebf4dfa8a1b04785b2380116023c0
   - enabled: 1

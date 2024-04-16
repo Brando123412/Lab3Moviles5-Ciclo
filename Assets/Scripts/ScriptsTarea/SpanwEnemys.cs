@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class SpanwEnemys : MonoBehaviour
 {
-    private float fireRate = 1f;
+    private float fireRate = 2f;
 
     [SerializeField] ObjectPool poolReference;
     [SerializeField]float _count;
@@ -19,7 +19,7 @@ public class SpanwEnemys : MonoBehaviour
             randomValue = Random.Range(-4.5f,4.5f);
             posReference = new Vector3(11.5f,randomValue,0);
             poolReference.GetObject(posReference);
-            _count = 0;   print("Hola");
+            _count = 0;   
         }
     }
 }

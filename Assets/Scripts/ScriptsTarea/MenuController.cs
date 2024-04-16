@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -11,7 +12,7 @@ public class MenuController : MonoBehaviour
     }
     public void IrAGame()
     {
-        SceneManager.LoadScene(1);
+        SceneGlobalManager.Instance.SelectionAndGame();
     }
 
 }

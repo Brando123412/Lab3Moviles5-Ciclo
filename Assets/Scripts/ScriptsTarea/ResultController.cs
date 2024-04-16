@@ -7,21 +7,17 @@ public class ResultController : MonoBehaviour
 {
 
     [SerializeField] TMP_Text[] textsScore;
-    [SerializeField] InsertionSort SOCore;
     int[] curretValue;
-    void Awake()
+    void OnEnable()
     {
-        curretValue = SOCore.ReturmArray();
-    }
-    void Start()
-    {
+        curretValue = SceneGlobalManager.Instance.puntaje.ReturmArray();
         for (int i = curretValue.Length - 1; i >= 0; i--)
         {
-            textsScore[i].text = "Score: "+curretValue[i].ToString();
+            textsScore[i].text = "Score: " + curretValue[i].ToString();
         }
     }
     public void IrAMenu()
     {
-        SceneManager.LoadScene(0);
+        SceneGlobalManager.Instance.DescargarEscenas();
     }
 }
