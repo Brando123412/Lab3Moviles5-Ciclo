@@ -15,10 +15,8 @@ public class SceneGlobalManager : Singleton<SceneGlobalManager>
 
     public InsertionSort puntaje;
     //Fade
-    public float durationAnimation = 3f;
+    public float durationAnimation;
     public Image imageAnimation;
-
-
     private void Start()
     {
         StartFadeAnimation();
@@ -39,6 +37,7 @@ public class SceneGlobalManager : Singleton<SceneGlobalManager>
             SceneManager.LoadScene(scenaGame, LoadSceneMode.Additive);
         }
         StartCoroutine(BuscarObjectScene(scenaGame));
+        StartFadeAnimation();
     }
     public void ActivarEscenaResult()
     {
@@ -47,6 +46,7 @@ public class SceneGlobalManager : Singleton<SceneGlobalManager>
             SceneManager.LoadScene(scenaResult, LoadSceneMode.Additive);
         }
         StartCoroutine(BuscarObjectScene(scenaResult));
+        StartFadeAnimation();
     }
 
     IEnumerator DesactivarEscenaResult()
@@ -78,8 +78,6 @@ public class SceneGlobalManager : Singleton<SceneGlobalManager>
             resutlSceneGO = GameObject.Find(referencesScene);
         }
     }
-
-    //Fade metodo
     public void StartFadeAnimation()
     {
         if (imageAnimation != null)
@@ -91,19 +89,14 @@ public class SceneGlobalManager : Singleton<SceneGlobalManager>
     IEnumerator FadeOut()
     {
         float timer = 0f;
-
         while (timer < durationAnimation)
         {
-            
             timer += Time.deltaTime;
-
             float progress = Mathf.Clamp01(timer / durationAnimation);
-
             if (imageAnimation != null)
             {
-                imageAnimation.color = new Color(imageAnimation.color.r, imageAnimation.color.g, imageAnimation.color.b, 1f - progress);
+                imageAnimation.color = new Color(imageAnimation.color.r - progress, imageAnimation.color.g - progress, imageAnimation.color.b - progress, 1f - progress);
             }
-
             yield return null;
         }
     }

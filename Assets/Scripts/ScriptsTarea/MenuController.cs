@@ -12,7 +12,11 @@ public class MenuController : MonoBehaviour
     }
     public void IrAGame()
     {
-        SceneGlobalManager.Instance.SelectionAndGame();
+        if (playerSO.spriteJugador != null)
+        {
+            SceneGlobalManager.Instance.SelectionAndGame();
+        }
+        
     }
 
 }
