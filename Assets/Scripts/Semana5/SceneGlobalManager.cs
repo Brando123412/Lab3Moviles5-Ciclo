@@ -29,7 +29,6 @@ public class SceneGlobalManager : Singleton<SceneGlobalManager>
     {
         StartFadeAnimation();
         Invoke("ActivarEscenaSelection", durationAnimation);
-        
     }
     public void ActivarEscenaSelection()
     {
