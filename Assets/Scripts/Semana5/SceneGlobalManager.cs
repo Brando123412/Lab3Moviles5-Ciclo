@@ -17,10 +17,15 @@ public class SceneGlobalManager : Singleton<SceneGlobalManager>
     //Fade
     public float durationAnimation;
     public Image imageAnimation;
+    public NotificationSimple notification1;
+    public NotificationSimple notification2;
+
     private void Start()
     {
         StartFadeAnimation();
         Invoke("ActivarEscenaSelection", durationAnimation);
+        notification1.Start();
+        notification2.Start();
     }
     public void ActivarEscenaSelection()
     {

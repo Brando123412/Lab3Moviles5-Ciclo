@@ -5,7 +5,6 @@ using UnityEngine.SocialPlatforms.Impl;
 
 public class ResultController : MonoBehaviour
 {
-
     [SerializeField] TMP_Text[] textsScore;
     int[] curretValue;
     void OnEnable()

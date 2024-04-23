@@ -3,11 +3,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "Ordenamiento", menuName = "ScriptableObjects/Ordenamiento", order = 0)]
 public class InsertionSort : ScriptableObject
 {
-    int[] puntajes = new int[10];
+    [SerializeField]int[] puntajes = new int[10];
     public int j = 0;
     public int puntajeAcumulado = 0;
     public void SavePuntaje(int puntajeValue)
     {
+        if (puntajeValue > puntajes[9])
+        {
+            SceneGlobalManager.Instance.notification1.SendNotification("Nuevo puntaje maximo", "Tienes un nuevo rescord", 0);
+        }
         if (j < 10)
         {
             for (int i = 0; i < puntajes.Length; i++)

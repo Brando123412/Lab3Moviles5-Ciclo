@@ -17,9 +17,10 @@ public class GameManager : MonoBehaviour
         puntajeValue = puntajeValue + Time.deltaTime;   
         if (playerController.vida < 0)
         {
-            SceneGlobalManager.Instance.resutlSceneGO.SetActive(true);
             SceneGlobalManager.Instance.gameSceceGO.SetActive(false);
             SceneGlobalManager.Instance.puntaje.SavePuntaje((int)puntajeValue);
+            SceneGlobalManager.Instance.resutlSceneGO.SetActive(true);
+            SceneGlobalManager.Instance.notification1.SendNotification("Ronda terminada", "Ronda terminada", 0);
         }
         scoreActual.text = "Puntaje: "+Mathf.Round(puntajeValue).ToString();
     }

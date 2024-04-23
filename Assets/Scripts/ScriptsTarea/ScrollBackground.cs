@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ScrollBackground : MonoBehaviour
 {
-    public float scrollSpeed = 0.5f;
+    public float scrollSpeed ;
     [SerializeField] Renderer renderer1;
 
     void Start()
