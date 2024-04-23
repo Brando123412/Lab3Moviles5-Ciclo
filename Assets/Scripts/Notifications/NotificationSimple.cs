@@ -59,7 +59,7 @@ public class NotificationSimple : ScriptableObject
         notification.SmallIcon = iconSmall;
         notification.LargeIcon = iconLarge;
 
-        AndroidNotificationCenter.SendNotification(notification, "default_channel");
+        AndroidNotificationCenter.SendNotification(notification, idCanal);
     }
     /*
     public void ButtonFunction()

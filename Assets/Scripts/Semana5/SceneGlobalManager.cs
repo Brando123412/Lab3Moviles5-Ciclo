@@ -20,12 +20,16 @@ public class SceneGlobalManager : Singleton<SceneGlobalManager>
     public NotificationSimple notification1;
     public NotificationSimple notification2;
 
+    private void Awake()
+    {
+        notification1.Start();
+        notification2.Start();
+    }
     private void Start()
     {
         StartFadeAnimation();
         Invoke("ActivarEscenaSelection", durationAnimation);
-        notification1.Start();
-        notification2.Start();
+        
     }
     public void ActivarEscenaSelection()
     {
